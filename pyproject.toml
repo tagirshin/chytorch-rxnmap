@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "chytorch-rxnmap-synplan"
+version = "1.5"
+description = ""  # Description was not in setup.py, can be added manually
+authors = ["Dr. Ramil Nugmanov <nougmanoff@protonmail.com>"]
+license = "LGPL-3.0-or-later"  # Adjusted from LGPLv3
+readme = "README.md"
+homepage = "https://github.com/chython/chytorch-rxnmap"
+repository = "https://github.com/chython/chytorch-rxnmap"
+keywords = ["scientific engineering", "chemistry", "information analysis", "software development", "libraries"] # Inferred from classifiers
+classifiers = [
+    "Environment :: Plugins",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+packages = [{include = "chytorch"}] # Adjusted from find_namespace_packages(include=('chytorch.*',))
+include = ["chytorch/zoo/rxnmap/weights.pt"] # from package_data
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+chytorch-synplan = ">=1.68"
+
+[tool.poetry.group.dev.dependencies]
+# Add development dependencies here if any, e.g.
+# pytest = "^7.0"
+# black = "^23.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api" 
