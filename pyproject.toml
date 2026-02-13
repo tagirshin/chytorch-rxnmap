@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chytorch-rxnmap-synplan"
-version = "1.6"
+version = "1.7"
 description = ""  # Description was not in setup.py, can be added manually
 authors = ["Dr. Ramil Nugmanov <nougmanoff@protonmail.com>"]
 license = "LGPL-3.0-or-later"  # Adjusted from LGPLv3
@@ -26,8 +26,8 @@ packages = [{include = "chytorch"}] # Adjusted from find_namespace_packages(incl
 include = ["chytorch/zoo/rxnmap/weights.pt"] # from package_data
 
 [tool.poetry.dependencies]
-python = ">=3.10"
-chytorch-synplan = ">=1.69"
+python = ">=3.10,<4"
+chytorch-synplan = ">=1.70"
 
 [tool.poetry.group.dev.dependencies]
 # Add development dependencies here if any, e.g.

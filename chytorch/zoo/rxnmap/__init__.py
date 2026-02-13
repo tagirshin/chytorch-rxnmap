@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 #  Copyright 2021-2023 Ramil Nugmanov <nougmanoff@protonmail.com>
 #  This file is part of chytorch.
@@ -17,7 +16,7 @@
 #  along with this program; if not, see <https://www.gnu.org/licenses/>.
 #
 from math import inf
-from pkg_resources import resource_stream
+from importlib.resources import files
 from torch import load, zeros_like, float as t_float
 
 from chytorch.nn import ReactionEncoder
@@ -27,7 +26,7 @@ from chytorch.utils.data import ReactionEncoderDataset, collate_encoded_reaction
 class Model(ReactionEncoder):
     def __init__(self):
         super().__init__()
-        self.load_state_dict(load(resource_stream(__package__, 'weights.pt')))
+        self.load_state_dict(load(files(__package__).joinpath('weights.pt').open('rb'), weights_only=True))
         self.eval()
 
     def forward(self, reaction):
